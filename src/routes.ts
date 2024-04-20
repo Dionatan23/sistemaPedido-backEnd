@@ -27,7 +27,7 @@ const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"))
 
 // --- Rota teste ---
-router.get("/teste", (req: Request, res: Response) =>{
+router.get("/", (req: Request, res: Response) =>{
     return res.json({ ok: true })
 });
 
