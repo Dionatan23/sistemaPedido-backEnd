@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { Request, Response } from "express";
 import multer from "multer";
 import { CreateUserController } from "./controllers/user/CreateUserController";
 import { AuthUserController } from "./controllers/user/AuthUserController";
@@ -24,6 +25,11 @@ import uploadConfig from "./config/multer"
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"))
+
+// --- Rota teste ---
+router.get("/teste", (req: Request, res: Response) =>{
+    return res.json({ ok: true })
+});
 
 // --- Rotas USER ---
 router.post("/users", new CreateUserController().handle)
