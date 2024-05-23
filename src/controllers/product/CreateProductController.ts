@@ -18,7 +18,7 @@ class CreateProductController{
                 description,
                 price,
                 category_id,
-                banner: ""
+                banner,
             })
     
             return res.json(product)
